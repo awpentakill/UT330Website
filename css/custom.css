@@ -13,17 +13,10 @@
 /* ------------------------------------------------------------
    1. FONTS
 
-   The @import below pulls two typefaces from Google Fonts.
-   To change them:
-     1. go to fonts.google.com or fontshare.com
-     2. pick a font, copy the @import they give you
-     3. replace the line below
-     4. put the font's name in --sans-font or --heading-font
-
-   @import must be the first thing in the file. Always.
+   Helvetica is a system font, so there is no @import needed
+   here (unlike a Google Fonts pick). If a visitor doesn't have
+   Helvetica installed, the fallbacks below step in.
    ------------------------------------------------------------ */
-
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;600&display=swap');
 
 
 /* ------------------------------------------------------------
@@ -32,28 +25,28 @@
    These names come from simple.css. Changing a value here
    changes it everywhere on every page at once.
 
-   Change all of them. The point is that your site does not
-   look like the starter.
+   Sky blue theme: light blue backgrounds, a stronger blue for
+   links/accents, and a warm highlight color kept for contrast.
    ------------------------------------------------------------ */
 
 :root, ::backdrop {
 
   /* --- type --- */
-  --sans-font: 'Inter', system-ui, sans-serif;   /* body text */
-  --heading-font: 'Instrument Serif', Georgia, serif;  /* mine, not simple.css's */
+  --sans-font: Helvetica, Arial, sans-serif;   /* body text */
+  --heading-font: Helvetica, Arial, sans-serif;  /* headings match body now */
   --mono-font: ui-monospace, Menlo, Consolas, monospace;
 
-  /* --- color --- */
-  --bg:          #FCFBF9;   /* page background */
-  --accent-bg:   #F1EFEA;   /* boxes, table headers, quote backgrounds */
-  --text:        #1B1B1D;   /* body text */
-  --text-light:  #63636B;   /* captions and secondary text */
-  --border:      #D7D4CC;   /* rules and outlines */
-  --accent:      #1F5C4A;   /* links */
-  --accent-hover:#2E8268;
+  /* --- color: sky blue theme --- */
+  --bg:          #F4FAFF;   /* page background */
+  --accent-bg:   #E3F3FC;   /* boxes, table headers, quote backgrounds */
+  --text:        #15232E;   /* body text */
+  --text-light:  #5C7A8C;   /* captions and secondary text */
+  --border:      #BEE3F5;   /* rules and outlines */
+  --accent:      #0E86D4;   /* links */
+  --accent-hover:#0B6BAE;
   --accent-text: var(--bg); /* text sitting on top of accent */
-  --code:        #9A2A5C;
-  --marked:      #F5E06B;   /* highlighter color for <mark> */
+  --code:        #0B7285;
+  --marked:      #FFE28A;   /* highlighter color for <mark> */
 
   --standard-border-radius: 3px;
 }
