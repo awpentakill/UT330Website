@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two labs: a parks site and a personal profile — Adam Weng</title>
+<meta name="description" content="Catching up two weeks: the September 4 vocabulary lecture, a mock city parks site, and a personal profile page.">
+
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+<link rel="stylesheet" href="../css/custom.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Adam Weng</h1>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="index.html" aria-current="page">Log</a>
+    <a href="../project.html">Project</a>
+    <a href="../about.html">About</a>
+  </nav>
+</header>
+
+<main>
+
+<article>
+
+  <h2>Two labs: a parks site and a personal profile</h2>
+  <p><time datetime="2026-09-11">September 11, 2026</time> · Week 2</p>
+
+  <p>
+    This entry catches up on the last two weeks: the vocabulary from the
+    September 4 lecture, and two hands-on labs I built from starter files
+    &mdash; a mock city parks-and-recreation website, and a personal profile
+    page in the old-web &ldquo;about me&rdquo; tradition.
+  </p>
+
+
+  <h3>Structure, skeleton, surface</h3>
+
+  <p>
+    The September 4 class, <cite>Structure Is Interaction: Wayfinding Ep. 2</cite>
+    (Ron Bronson), is the lecture behind the wayfinding walk I wrote up
+    separately. Before that walk, though, we went through a set of terms for
+    describing how a person gets from wanting something to getting it:
+    goal &rarr; input/action &rarr; system response &rarr; feedback &rarr; next
+    action.
+  </p>
+
+  <dl>
+    <dt>Affordance</dt>
+    <dd>What an object or environment makes possible for a particular person.</dd>
+
+    <dt>Signifier</dt>
+    <dd>The visible cue that tells someone an action is possible.</dd>
+
+    <dt>Control</dt>
+    <dd>The thing a person operates to cause a change.</dd>
+
+    <dt>Constraint</dt>
+    <dd>What limits the available actions.</dd>
+
+    <dt>Feedback</dt>
+    <dd>What the system returns after an action.</dd>
+
+    <dt>State</dt>
+    <dd>The current condition of the system, which decides what can happen next.</dd>
+  </dl>
+
+  <p>
+    Zooming out, a site has a <strong>structure</strong> (what exists and what
+    comes first), a <strong>skeleton</strong> (where content, controls, and
+    navigation sit), and a <strong>surface</strong> (color, type, styling)
+    &mdash; on top of information-architecture terms for organizing it:
+    hierarchy, taxonomy, label, navigation, sequence, and progressive
+    disclosure. The in-class exercise was diagnosing <strong>friction</strong>
+    in an existing site: the effort between intent and completion.
+  </p>
+
+  <table>
+    <caption>Types of friction we practiced naming</caption>
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">What it means</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Label</th>
+        <td>The words don&rsquo;t match what&rsquo;s behind them.</td>
+      </tr>
+      <tr>
+        <th scope="row">Hierarchy</th>
+        <td>The important thing isn&rsquo;t the prominent thing.</td>
+      </tr>
+      <tr>
+        <th scope="row">Sequence</th>
+        <td>The right information, in the wrong order.</td>
+      </tr>
+      <tr>
+        <th scope="row">Buried</th>
+        <td>It&rsquo;s there, but nobody will find it.</td>
+      </tr>
+      <tr>
+        <th scope="row">Missing</th>
+        <td>The site assumes you already know.</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h3>Lab: Riverton Parks &amp; Recreation</h3>
+
+  <p>
+    The first lab was a starter template for a fictional city parks
+    department &mdash; Home, Parks, Reservations, and Rules &amp; Contact
+    pages, styled like an old municipal site with a navy header, beige
+    &ldquo;window&rdquo; panels, and a visitor counter &mdash; that I filled
+    in with the department&rsquo;s real content: hours, fees, and permit
+    rules for three parks. I renamed the parks along the way; Naidan Park,
+    Bursley Park, and the GGB Sports Complex are all UMich buildings wearing
+    a different hat. Nothing about the underlying content changed, but the
+    page reads like mine now, which was a good demonstration of how much
+    work a <strong>label</strong> is doing.
+  </p>
+
+  <figure>
+    <img src="../images/riverton-parks-home.png"
+         width="1280" height="1033"
+         alt="Home page of the Riverton Parks and Recreation site. A navy header sits above
+              a row of navigation tabs for Home, Parks, Reservations, and Rules and Contact.
+              Below that, a two-column layout of retro window panels covers finding a park,
+              reserving a space, using a trail, and reporting a problem, next to a sidebar
+              listing upcoming events and quick contact numbers.">
+    <figcaption>The home page, with the four main tasks laid out as cards.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="../images/riverton-parks-directory.png"
+         width="1280" height="1341"
+         alt="The Parks directory page, showing three cards for Naidan Park, Bursley Park,
+              and the GGB Sports Complex, each with a short description, hours, and a
+              reservation or accessibility link, followed by an amenities table comparing
+              the three parks.">
+    <figcaption>The Parks page, with my renamed parks and their amenities table.</figcaption>
+  </figure>
+
+  <p>
+    The Reservations page reuses the same fee and permit information as a
+    table, with a <code>&lt;details&gt;</code> element for &ldquo;Before you
+    apply&rdquo; &mdash; a small case of progressive disclosure, since most
+    visitors don&rsquo;t need the special-event or alcohol-permit rules and
+    shouldn&rsquo;t have to scroll past them. I also noticed the sports field
+    rate is listed twice, once for youth nonprofits and once for everyone
+    else, which reads like a duplicated row until you actually check the fee
+    column.
+  </p>
+
+
+  <h3>Lab: a personal profile page</h3>
+
+  <p>
+    The second lab was a personal &ldquo;profile&rdquo; starter, closer to an
+    old social-profile page than a portfolio: a photo panel, a status line, a
+    details table, a visitor counter, a Now Playing embed, and a Top Friends
+    grid. I personalized the home page &mdash; name, location, program,
+    contact buttons, mood/listening/working-on details, and a Spotify track
+    in the Now Playing slot &mdash; but only got as far as the home page.
+    About, Blog, and Friends still show the starter&rsquo;s placeholder text.
+  </p>
+
+  <figure>
+    <img src="../images/profile-site-home.png"
+         width="2124" height="1622"
+         alt="Personal profile page for Adam Weng in a blue and orange panel layout. The
+              left panel shows a photo of Adam at night in Shanghai holding a plush toy,
+              above his name in Chinese, his location, and his program. The right column
+              has About Me, and a Now Playing panel with a real Spotify embed for a
+              Hitorie track.">
+    <figcaption>
+      The profile home page, with my own photo and a live Spotify embed dropped into
+      the Now Playing slot.
+    </figcaption>
+  </figure>
+
+  <p>
+    The two labs used the same vocabulary from opposite directions. Riverton
+    Parks is about making unfamiliar civic content easy to scan and act on
+    for a stranger. The profile page is about making familiar personal
+    content recognizably mine for someone who already knows me. Same
+    structure, skeleton, and surface; different job.
+  </p>
+
+
+  <h3>Vocabulary from class</h3>
+
+  <ul>
+    <li><strong>Affordance / signifier:</strong> the parks site&rsquo;s nav tabs and the profile&rsquo;s contact buttons both say what they do before you click them.</li>
+    <li><strong>Label:</strong> renaming the parks changed nothing structurally and changed how the whole page feels.</li>
+    <li><strong>Progressive disclosure:</strong> the &ldquo;Before you apply&rdquo; details on the Reservations page, collapsed until someone needs it.</li>
+  </ul>
+
+  <p><a href="index.html">Back to the log</a></p>
+
+</article>
+
+</main>
+
+<footer>
+  <p>Adam Weng. UT330, Taubman College, Fall 2026.</p>
+</footer>
+
+</body>
+</html>
+
