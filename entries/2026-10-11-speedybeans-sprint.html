@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team sprint: SpeedyBeans order status and pickup — Adam Weng</title>
+<meta name="description" content="Reflecting on the five-person SpeedyBeans interaction design sprint, and how my Screen 5, order status and pickup, went from a greyscale sketch to a Material 3 design to a change order.">
+
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+<link rel="stylesheet" href="../css/custom.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Adam Weng</h1>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="index.html" aria-current="page">Log</a>
+    <a href="../project.html">Project</a>
+    <a href="../about.html">About</a>
+  </nav>
+</header>
+
+<main>
+
+<article>
+
+  <h2>Team sprint: SpeedyBeans order status and pickup</h2>
+  <p><time datetime="2026-10-11">October 11, 2026</time> · Week 6</p>
+
+  <p>
+    For our product team interaction design sprint, five of us designed a
+    mobile pre-order app for a fictional coffee shop, SpeedyBeans. The brief
+    was for people on their way to work: a regular customer should be able
+    to finish an order in about sixty seconds and then pick it up without
+    having to think. Each of us owned one screen, and I had the last one,
+    <strong>Screen 5: order status and pickup</strong>. This entry goes
+    through how that screen changed over three phases, and what I think
+    worked and didn&rsquo;t across the team.
+  </p>
+
+
+  <h3>How we split the work</h3>
+
+  <p>
+    We worked one screen per person in a shared Figma file, then critiqued
+    each other&rsquo;s screens and negotiated until the five of them read
+    as one app. Then we revised together.
+  </p>
+
+  <table>
+    <caption>Who owned what in the SpeedyBeans flow</caption>
+    <thead>
+      <tr>
+        <th scope="col">Screen</th>
+        <th scope="col">Job</th>
+        <th scope="col">Designer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Home, choose a drink, order again</td>
+        <td>Ziyue Jia (Eddy)</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Customize your drink</td>
+        <td>Yufan Xu</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Sold out, choose an alternative</td>
+        <td>Teammate</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Review and pay</td>
+        <td>Qingyang Lan</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>Order status and pickup</td>
+        <td>Me</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h3>Phase 1: a greyscale sketch</h3>
+
+  <p>
+    I started with a low-fidelity wireframe in greys only, using the same
+    font as the final version so the type hierarchy would carry forward. The
+    point was to settle structure before surface: what someone waiting for
+    a coffee needs to see, and in what order. That meant a status box at the
+    top, a three-step tracker, a placeholder for a &ldquo;ready&rdquo;
+    notice, the order number, the drink, and where to pick it up.
+  </p>
+
+  <figure>
+    <img src="../images/sb-screen5-phase1-sketch.jpg"
+         width="418" height="1094"
+         alt="Greyscale wireframe of the Order status screen. From top to bottom: a back
+              arrow and the title Order status; a box reading Being made, ready in about
+              4 minutes; a three-step tracker labelled placed, being made, and ready,
+              with the second step highlighted; a dashed box marked READY notice, only
+              shows when the drink is done; a card for Order 128 with an image
+              placeholder, Oat latte, medium, oat milk, five dollars; a pickup card for
+              SpeedyBeans, 5th and Main, pickup counter left of door; and a Get
+              directions button at the bottom.">
+    <figcaption>
+      The Phase 1 sketch. The question marks in the copy are things I
+      hadn&rsquo;t decided yet.
+    </figcaption>
+  </figure>
+
+  <p>
+    Next to the sketch I left notes on what each piece should become in the
+    final version:
+  </p>
+
+  <dl>
+    <dt>One status box</dt>
+    <dd>Becomes three states (placed, being made, ready) that each change colour and icon.</dd>
+
+    <dt>Stepper works</dt>
+    <dd>Keep the three steps, but add Done / Now / Up next text so it doesn&rsquo;t rely on colour alone.</dd>
+
+    <dt>Ready notice is a dashed box</dt>
+    <dd>Becomes a solid banner: &ldquo;Your coffee is ready! Pick up #128 at the counter,&rdquo; plus a phone alert.</dd>
+
+    <dt>#128 bigger</dt>
+    <dd>The barista calls out the number, so it has to be the easiest thing on the screen to read.</dd>
+
+    <dt>Where do I go?</dt>
+    <dd>The store and the exact spot belong together in one card.</dd>
+  </dl>
+
+
+  <h3>Phase 2: three states in Material 3</h3>
+
+  <p>
+    Phase 2 turned the sketch into a finished screen built from the Material
+    3 design kit, with one screen for each order state. Most of the work was
+    in the <strong>feedback</strong>: each state answers the question
+    someone has at that moment. Did it go through? How long now? Where do I
+    go? The wait time counts down (&ldquo;about 4 minutes,&rdquo; then
+    &ldquo;about 2&rdquo;). The tracker labels every step. When the drink is
+    ready, the whole top card flips to a solid purple banner and the pickup
+    card is highlighted too.
+  </p>
+
+  <figure>
+    <img src="../images/sb-screen5-phase2-states.jpg"
+         width="1244" height="988"
+         alt="Three versions of the Order status screen side by side in a purple Material 3
+              style. Left, Order placed: SpeedyBeans has your order, ready in about 4
+              minutes, with the first tracker step marked Now. Middle, Being made: your
+              barista is making your drink now, ready in about 2 minutes, with the first
+              step Done and the second Now. Right, Your coffee is ready: a solid purple
+              banner says pick up order 128 at the pickup counter and that an alert was
+              sent to your phone, all three steps are Done, the pickup card is
+              highlighted, and the button reads Done. All three show order number 128,
+              an Oat Milk Latte for five twenty-five, and the pickup spot, left of the
+              front door at 5th and Main.">
+    <figcaption>
+      Order placed, Being made, and Ready for pickup. Only the top card, the
+      tracker, and the button change between states.
+    </figcaption>
+  </figure>
+
+  <p>
+    I made the status card, the tracker, the order details, and the pickup
+    info into reusable components. The three states are the same screen
+    with different <strong>states</strong> switched on, and that paid off
+    in the next phase.
+  </p>
+
+
+  <h3>Phase 3: someone else picks it up</h3>
+
+  <p>
+    The change order was that customers increasingly order on the way to
+    work but ask a coworker, partner, or friend to pick it up. As a team we
+    had to agree on four things. When does the customer make that choice?
+    What does the shop actually need? What does the pickup person need to
+    know? Does the confirmation change?
+  </p>
+
+  <table>
+    <caption>What we decided for the pickup-person change</caption>
+    <thead>
+      <tr>
+        <th scope="col">Question</th>
+        <th scope="col">Our answer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">When?</th>
+        <td>Before payment, with &ldquo;Myself&rdquo; or &ldquo;Someone else.&rdquo; It can still be changed later from my screen.</td>
+      </tr>
+      <tr>
+        <th scope="row">What the shop needs</th>
+        <td>A name, a phone number for the ready text, and the order number. No payment details and no address.</td>
+      </tr>
+      <tr>
+        <th scope="row">What the pickup person needs</th>
+        <td>One text with the order number, the store, the exact spot, and the name to give at the counter.</td>
+      </tr>
+      <tr>
+        <th scope="row">Confirmation</th>
+        <td>Names who is picking up and offers a way to share the details.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <figure>
+    <img src="../images/sb-screen5-phase3-pickup-person.jpg"
+         width="382" height="1030"
+         alt="The Order status screen in the Being made state, now reading Jordan Lee will
+              pick it up. Below the tracker is a new Pickup person card with an outline:
+              initials JL, the name Jordan Lee, ready alert texted to a masked phone number
+              ending 2290, a Change link, and a preview of the text Jordan receives: Pick up
+              order 128 at 5th and Main, pickup counter by the front door, say Jordan Lee.
+              The order and pickup cards are unchanged, and the button reads Send pickup
+              details to Jordan.">
+    <figcaption>
+      The Phase 3 screen. The new Pickup person card sits in the middle, and
+      everything else is the Phase 2 screen reused.
+    </figcaption>
+  </figure>
+
+  <p>
+    On my screen, the change came down to one new component: a Pickup person
+    card with the name, a masked phone number, a Change link, and a preview
+    of the exact text the other person gets. The button became &ldquo;Send
+    pickup details to Jordan.&rdquo; Because Phase 2 was built from
+    components, nothing else on the screen had to be redrawn.
+  </p>
+
+
+  <h3>Journey map for Screen 5</h3>
+
+  <table>
+    <caption>The three order states from the customer&rsquo;s side and the shop&rsquo;s side</caption>
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Order placed</th>
+        <th scope="col">Being made</th>
+        <th scope="col">Ready for pickup</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Customer is thinking</th>
+        <td>&ldquo;Did it go through?&rdquo;</td>
+        <td>&ldquo;Will it be ready when I get there?&rdquo;</td>
+        <td>&ldquo;Where do I go, and which one is mine?&rdquo;</td>
+      </tr>
+      <tr>
+        <th scope="row">Screen 5 answers with</th>
+        <td>Confirmation, wait time, #128</td>
+        <td>Tracker on &ldquo;Now,&rdquo; shorter wait</td>
+        <td>Ready banner, phone alert, highlighted pickup spot</td>
+      </tr>
+      <tr>
+        <th scope="row">Shop is doing</th>
+        <td>Queuing the order</td>
+        <td>Making the drink</td>
+        <td>Setting it on the counter, calling the number</td>
+      </tr>
+      <tr>
+        <th scope="row">Shop wants</th>
+        <td>Fewer &ldquo;did it work?&rdquo; questions</td>
+        <td>Fewer &ldquo;how long?&rdquo; questions</td>
+        <td>A fast handoff to the right person</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h3>What went well</h3>
+
+  <ul>
+    <li>Splitting one screen per person meant everyone owned a piece and nothing was designed twice.</li>
+    <li>Using the same Material 3 kit and palette made five people&rsquo;s screens look like one app.</li>
+    <li>Sketching in greyscale first caught hierarchy problems early, like the order number not standing out, before any colour was involved.</li>
+    <li>Building with components made the Phase 3 change cheap. I added one card instead of redoing the screen.</li>
+    <li>The pickup-person flow runs across Screens 1, 4, and 5, so the change order reads as one connected flow, not five separate patches.</li>
+  </ul>
+
+
+  <h3>What could have been better</h3>
+
+  <ul>
+    <li>
+      <strong>Shared sample data.</strong> Put side by side, our screens
+      disagree on the order number (#128, #941, SB-2048), the store (5th
+      &amp; Main vs. Central Campus), the drink, and even the pickup person
+      (Jordan Lee on mine, Alex Chen elsewhere). We should have agreed on
+      one example order on day one.
+    </li>
+    <li>
+      <strong>One rule for pickup data.</strong> Some screens ask for only a
+      name, and others ask for a name and phone number. That&rsquo;s a real
+      decision we never wrote down.
+    </li>
+    <li>
+      <strong>Frame sizes.</strong> My screens are 412 &times; 1072, and others
+      are 390 &times; 844, which made lining them up for the presentation
+      awkward.
+    </li>
+    <li>
+      <strong>No real users.</strong> We critiqued each other, but nobody
+      tested whether the ready banner gets noticed or whether a regular can
+      actually finish an order in sixty seconds.
+    </li>
+  </ul>
+
+  <aside>
+    <p>
+      <strong>What I would do next.</strong> Hand someone a phone showing the
+      Being made state and ask them to tell me where to go and what to say at
+      the counter. If they can&rsquo;t answer in a few seconds, the pickup card
+      isn&rsquo;t doing its job yet.
+    </p>
+  </aside>
+
+
+  <h3>Vocabulary from class</h3>
+
+  <ul>
+    <li><strong>Feedback:</strong> each order state is the system&rsquo;s answer to &ldquo;what&rsquo;s happening with my coffee?&rdquo;</li>
+    <li><strong>State:</strong> one screen with three states rather than three separate screens.</li>
+    <li><strong>Hierarchy:</strong> #128 is the biggest thing on the screen because it&rsquo;s the thing the barista says out loud.</li>
+    <li><strong>Structure, skeleton, surface:</strong> the sketch settled structure and skeleton, and Phase 2 was mostly surface.</li>
+  </ul>
+
+  <p><a href="index.html">Back to the log</a></p>
+
+</article>
+
+</main>
+
+<footer>
+  <p>Adam Weng. UT330, Taubman College, Fall 2026.</p>
+</footer>
+
+</body>
+</html>
